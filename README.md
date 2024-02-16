@@ -13,6 +13,26 @@ Monte Carlo Simulation is a statistical technique that uses randomness to predic
 - **Volatility Adjustment**: This feature enables users to adjust the volatility factor, exploring how changes in market volatility might affect stock prices.
 - **Investment Amount Calculation**: Input an investment amount to calculate the expected return based on the simulation results, adding a practical dimension to the analysis.
 
+## Monte Carlo Simulation Details
+
+### Key Variables Explained
+- **`dt` (Time Step)**: Represents one trading day, typically 1/252, reflecting the annual trading days. It's used to scale the mean and volatility for daily price simulation.
+
+- **`mu` (Expected Return)**: The average daily return calculated from historical data, guiding the expected trend in stock price movement in our simulations.
+
+- **`sigma` (Volatility)**: Measures the stock's price fluctuation level. Higher `sigma` means higher risk and uncertainty in price movement.
+
+### Monte Carlo Simulation Function
+This central function simulates future stock price paths using `dt`, `mu`, and `sigma`. It performs the following steps:
+
+1. Generates random daily price variations reflecting the stock's historical volatility (`sigma`) and expected return (`mu`).
+2. Applies these variations sequentially to simulate a price path for the defined forecast period.
+3. Repeats the simulation for many runs to model a wide range of possible future price paths.
+
+### Purpose and Application
+These variables allow the simulation to balance historical stock trends with the inherent uncertainty in market movements, providing a realistic range of future stock prices. This method offers valuable insights into potential risk and price behavior, aiding in informed investment decision-making.
+
+
 ## How It Works
 1. **Data Retrieval**: The app downloads historical stock price data for the selected tickers within the user-defined date range.
 2. **Simulation Parameters**:
